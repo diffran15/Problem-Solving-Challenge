@@ -5,24 +5,30 @@ using UnityEngine;
 public class BallMoveController : MonoBehaviour
 {
     [Header("Movement")]
-    public float speedBall;
+    public float xForce;
+    public float yForce;
 
     private Rigidbody2D rb;
-    private Vector2 velocity;
+    
 
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
 
-        velocity = new Vector2(speedBall, 0);
+        PushBall();
 
     }
-
-    private void FixedUpdate()
+    void PushBall()
     {
-
-
-        rb.MovePosition(rb.position + velocity * Time.fixedDeltaTime);
-
+        float randomDirection = Random.Range(0, 2);
+        if (randomDirection < 1.0f)
+        {
+            rb.AddForce(new Vector2(xForce, yForce));
+        }
+        else
+        {
+            rb.AddForce(new Vector2(-xForce, yForce));
+        }
     }
+    
 }
