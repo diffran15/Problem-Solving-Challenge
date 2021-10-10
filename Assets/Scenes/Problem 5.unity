@@ -460,7 +460,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d52b81697dba40542bd15c0bd973d7eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Speed: 10
+  Speed: 0
   yBoundary: 6.5
   xBoundary: 2.5
   upButton: 119
